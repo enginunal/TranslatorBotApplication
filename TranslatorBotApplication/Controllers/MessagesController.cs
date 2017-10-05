@@ -34,9 +34,8 @@ namespace TranslatorBotApplication
                 {
                     var accessToken = await GetAuthenticationToken(translatorApiKey);
                     var output = await TranslateText(input, toLanguage, accessToken);
-                    //Console.WriteLine(output);
-
-                    Activity reply = activity.CreateReply($"Translated to English is => '{output}'");
+                    
+                    Activity reply = activity.CreateReply($"Translated to English => '{output}'");
                     await connector.Conversations.ReplyToActivityAsync(reply);
 
                 });
